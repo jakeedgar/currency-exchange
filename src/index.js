@@ -9,13 +9,17 @@ import CurrencyExchange from './js/currency-api.js';
 // }
 
 $(document).ready(function() {
-  let promise = CurrencyExchange.getValue();
-  promise.then(function(response) {
+  $("#btn-exchange").click(function(e) {
+    e.preventDefault();
     const userInput = $("#currency").val();
     console.log(userInput);
-    const amount = $(".amount").val();
+    const amount = $("#amount").val();
     console.log(amount);
-    const body = JSON.parse(response);
-    $('#exchange-display').text(`Current Conversion: ${parseFloat(body[0].conversion_result).toFixed(2)}`);
+    let promise = CurrencyExchange.getValue(userInput, amount);
+    promise.then(function(response) {
+      const body = JSON.parse(response);
+      console.log(body);
+      // $('#exchange-display').html(`Current Conversion: ${parseFloat(body[0].conversion_result).toFixed(2)}`);
+    });
   });
 });
