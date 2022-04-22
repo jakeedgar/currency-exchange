@@ -9,7 +9,7 @@ body {
   color: beige;
 }
 
-#exchange-display {
+#exchange-display, #error-display {
   font-size:x-large;
   font-family:'Courier New', Courier, monospace;
   color: beige;

@@ -5,8 +5,8 @@ import $ from 'jquery';
 import CurrencyExchange from './js/currency-api.js';
 
 function displayExchange(response, amount) {
-  if (response.result === "error") {
-    $('.show-errors').text(`${response.result} ${response.error_type}`);
+  if (response.result !== "success") {
+    $('#error-display').text(`${response.result} please check API KEY`);
   } else {
     $("#exchange-display").text(`Your ${amount} in USD converts to: ${parseFloat(response.conversion_result).toFixed(2)} in ${response.target_code}`);
   }
