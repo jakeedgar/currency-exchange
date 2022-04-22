@@ -8,7 +8,8 @@ function displayExchange(response) {
   console.log(response);
   console.log(response.target_code);
   console.log(response.conversion_result);
-  if (response.main) {
+  console.log(response.amount);
+  if (response.result === "success") {
     $("#exchange-display").text(`Your ${CurrencyExchange.amount} in USD converts to: ${parseFloat(response.conversion_result).toFixed(2)} in ${response.target_code}`);
   } else {
     $('.show-errors').text(`${CurrencyExchange.error}`);
@@ -22,8 +23,8 @@ $(document).ready(function() {
     const userInput = $("#currency").val();
     const amount = $("#amount").val();
     CurrencyExchange.getValue(userInput, amount)
-      .then(function(response) {
-        displayExchange(response);
+      .then(function(newResponse) {
+        displayExchange(newResponse);
       });
   });
 });
