@@ -8,19 +8,25 @@ import CurrencyExchange from './js/currency-api.js';
 //   return;
 // }
 
+function displayErrors(error) {
+  $('.show-errors').text(`${error}`);
+}
+
 $(document).ready(function() {
   $("#btn-exchange").click(function(e) {
     e.preventDefault();
     const userInput = $("#currency").val();
-    console.log(userInput);
     const amount = $("#amount").val();
-    console.log(amount);
     let promise = CurrencyExchange.getValue(userInput, amount);
     promise.then(function(response) {
+      if (resonse instanceof Error) {
+        throw Error(`CurrencyExchange API error: ${response.message}`)
+      }
       const body = JSON.parse(response);
-      console.log(body);
-      console.log(body.conversion_result);
-      $("#exchange-display").html(`Converts to: ${parseFloat(body.conversion_result).toFixed(2)} in ${body.target_code}`);
+      $("#exchange-display").html(`Your ${amount} in USD converts to: ${parseFloat(body.conversion_result).toFixed(2)} in ${body.target_code}`);
+      promise.catch(error) {
+        displayErrors(error.message);
+      }
     });
   });
 });
