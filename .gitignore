@@ -1,0 +1,7 @@
+// this my Git Ignore //
+
+coverage/
+node_modules/
+.DS_Store
+dist/
+.env
