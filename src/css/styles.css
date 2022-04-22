@@ -2,3 +2,20 @@ body {
   background-color: #000;
   color: #fff;
 }
+
+.header {
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  color: beige;
+}
+
+#exchange-display {
+  font-size:x-large;
+  font-family:'Courier New', Courier, monospace;
+  color: beige;
+}
+
+#dropdown {
+  font-family:'Courier New', Courier, monospace;
+  color: beige;
+}

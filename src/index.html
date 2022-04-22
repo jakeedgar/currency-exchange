@@ -8,26 +8,23 @@
 </head>
 <body>
   <div class="container">
-    <div class="jumbotron">
-      <h3>World of Currency Exchange!</h3>
-      <form id="form-control">
-        <div id="form-group">
-          <select id="currency" class="form-control">
-            <option value="EUR">EURO</option>
-            <option value="RUB">RUBLE</option>
-            <option value="CZK">KORUNA</option>
-            <option value="PLN">ZLOTY</option>
-            <option value="GEL">LARI</option>
-          </select>
-          <label for="amount">Enter an Amount in USD:</label>
-          <input id="amount" type="number">
-          <button class="btn-primary" id="btn-exchange">Get the exchange</button>
-        </div>
-        <div id="exchange-display"></div>
-        <!-- <div class="gif-display"></div> -->
-        <div class="error-display"></div>
-      </form>
-    </div>
+    <h3 class="header">World of Currency Exchange!</h3>
+    <form id="form-control">
+      <div id="form-group">
+        <h3 id="dropdown">Select a Currency:</h3>
+        <select id="currency" class="form-control">
+          <option value="EUR">EURO</option>
+          <option value="RUB">RUBLE</option>
+          <option value="CZK">KORUNA</option>
+          <option value="PLN">ZLOTY</option>
+          <option value="GEL">LARI</option>
+        </select>
+        <input id="amount" type="number" placeholder="enter USD:">
+        <button class="btn-danger" id="btn-exchange">Get the exchange</button>
+      </div>
+      <div id="exchange-display"></div>
+      <div class="error-display"></div>
+    </form>
   </div>
 </body>
 </html>
