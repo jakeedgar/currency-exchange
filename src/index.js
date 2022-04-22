@@ -19,7 +19,8 @@ $(document).ready(function() {
     promise.then(function(response) {
       const body = JSON.parse(response);
       console.log(body);
-      // $('#exchange-display').html(`Current Conversion: ${parseFloat(body[0].conversion_result).toFixed(2)}`);
+      console.log(body.conversion_result);
+      $("#exchange-display").html(`Converts to: ${parseFloat(body.conversion_result).toFixed(2)} in ${body.target_code}`);
     });
   });
 });
