@@ -5,12 +5,11 @@ import $ from 'jquery';
 import CurrencyExchange from './js/currency-api.js';
 
 function displayExchange(response, amount) {
-  if (response.result === "success") {
-    $("#exchange-display").text(`Your ${amount} in USD converts to: ${parseFloat(response.conversion_result).toFixed(2)} in ${response.target_code}`);
+  if (response.result === "error") {
+    $('.show-errors').text(`${response.result} ${response.error_type}`);
   } else {
-    $('.show-errors').text(`${CurrencyExchange.error}`);
+    $("#exchange-display").text(`Your ${amount} in USD converts to: ${parseFloat(response.conversion_result).toFixed(2)} in ${response.target_code}`);
   }
-
 }
 
 $(document).ready(function() {
