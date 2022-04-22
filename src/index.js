@@ -5,10 +5,6 @@ import $ from 'jquery';
 import CurrencyExchange from './js/currency-api.js';
 
 function displayExchange(response, amount) {
-  console.log(response);
-  console.log(response.target_code);
-  console.log(response.conversion_result);
-  console.log(response.amount);
   if (response.result === "success") {
     $("#exchange-display").text(`Your ${amount} in USD converts to: ${parseFloat(response.conversion_result).toFixed(2)} in ${response.target_code}`);
   } else {
