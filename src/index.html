@@ -10,15 +10,23 @@
   <div class="container">
     <div class="jumbotron">
       <h3>World of Currency Exchange!</h3>
-      <div id="form-group">
-        <select id="currency" class="form-control">
-          <option value="">A</option>
-          <option value="">B</option>
-          <option value="">C</option>
-          <option value="">D</option>
-          <option value="">E</option> 
-        </select>
-      </div>
+      <form id="form-control">
+        <div id="form-group">
+          <select id="currency" class="form-control">
+            <option value="">A</option>
+            <option value="">B</option>
+            <option value="">C</option>
+            <option value="">D</option>
+            <option value="">E</option> 
+          </select>
+          <label for="amount">Enter an Amount in USD:</label>
+          <input id="amount" type="number">
+          <button class="btn-dark" id="usd-amount">Get the exchange</button>
+        </div>
+        <div class="exchnage-display"></div>
+        <!-- <div class="gif-display"></div> -->
+        <div class="error-display"></div>
+      </form>
     </div>
   </div>
 </body>
